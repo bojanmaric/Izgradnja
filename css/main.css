@@ -4,7 +4,7 @@
     margin: 0;
 }
 body{
-    background-color: rgb(12, 76, 155);
+    background-color: #9973D1;
     font-family: 'Poppins', sans-serif;
 }
 .logo{
@@ -18,7 +18,7 @@ body{
     
     width: 100%;
     padding: 0 20%;
-    background-color: rgb(10, 167, 138);
+    background-color: #6A13E7;
     height: 60px;
     opacity: .9;
     position: absolute;
@@ -26,13 +26,23 @@ body{
     display: flex;
     justify-content: center;
 }
-nav a:hover,a:focus{
-    color: rgb(13, 37, 68);
+nav a:hover{
+    color: rgb(193, 203, 218);
 
 
 }
-ul{
-    padding-top: 20px;
+nav ul{
+    padding-top: 15px;
+}
+
+
+nav a:hover::before{
+    width: 80%;
+}
+header ::after{
+    content:'';
+    
+    clear: both;
 }
 ul li{
     
@@ -41,6 +51,7 @@ ul li{
     padding: 0 .8rem;
     font-size: 1.3rem;
     text-transform: uppercase;
+    position: relative;
    
     
 }
@@ -48,6 +59,79 @@ ul li a{
     text-decoration: none;
     color: #fff;
     font-weight: 400;
-    transition: 0.4s;
+    transition: 250ms;
+    
+}
+nav a::before{
+    content: '';
+    
+    height: 3px;
+    top:-3px;
+    width: 0%;
+    position: absolute;
+    background-color: rgb(193, 203, 218);
+    transition: all ease-in-out 250ms;
+}
+.burger{
+   
+    margin-top: 17px;
+    margin-right: 10px;
+    float: right;
+    border: 1px solid rgb(193, 203, 218);
+    border-radius: 3px;
+    padding:3px;
+    display: none;
+
+}
+.burger div{
+    width: 20px;
+    height: 3px;
+    margin: 10px ;
+    background-color: rgb(193, 203, 218);
+    margin: 3px;
+}
+@media screen and (max-width:720px) {
+    
+    .nav-menu{
+        
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 40%;
+        height: 94vh;
+        background-color:#6A13E7;
+        transition: transform 0.5s ease-in;
+        transform: translateX(100%);
+    }
+    nav ul li{
+        display: table;
+        margin:40px auto;
+       
+        
+    }
+    .nav-menu li a{
+        font-weight: 500;
+        
+    }
+   
+    
+    .logo{
+        position: relative;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .burger{
+        display: block;
+    }
+    .container{
+        display: block;
+        padding: 0 30px;
+    }
+    
+}
+
+.nav-active{
+    transform: translateX(0%);
     
 }
