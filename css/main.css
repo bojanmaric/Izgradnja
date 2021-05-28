@@ -108,6 +108,9 @@ nav a:hover{
     
 }
 
+a{
+    outline: none;
+}
  .prev:hover i,
 .next:hover i{
     
